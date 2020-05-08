@@ -25,33 +25,36 @@
         <i class="fas fa-save text-light save-note"></i>
         <i class="fas fa-pen text-light new-note"></i>
       </div>
-    </nav>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-4 list-container">
-          <div class="card">
-            <ul class="list-group"></ul>
-          </div>
-        </div>
-        <div class="col-8">
-          <input
-            class="note-title"
-            placeholder="Note Title"
-            maxlength="28"
-            type="text"
-          />
-          <textarea
-            name=""
-            id=""
-            cols="100"
-            rows="2"
-            placeholder="Note Text"
-          ></textarea>
-          <button class="save-btn"><i class="fas fa-save"></i></button>
-          <button class="delete-btn"><i class="fas fa-trash-alt"></i></button>
-        </div>
-      </div>
-    </div>
+    </nav>        
+             
+            <div class="col-sm-11 col-md-10">
+              <div class="input-group input-group-lg col-sm-6 col-md-9">
+                <input type="text" class="form-control" id="note-title" placeholder="What's on your mind?" aria-describedby="Enter a note title." v-model="noteTitle">
+              </div>
+
+              <br/>
+
+              <div class="input-group col-sm-9 col-md-11">
+                <textarea class="form-control" id="note-body" rows="10" placeholder="Please explain..." v-model="noteBody"></textarea>
+              </div>
+
+              <br/>
+
+              <button type="button" class="btn btn-default btn-md btn-primary" id="save" v-on:click="addNote">
+                  <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> SAVE 
+              </button>
+
+              
+
+              <button type="button" class="btn btn-default btn-md btn-danger" id="update" v-if="editingNote" v-on:click="deleteNote('', '')">
+                  <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> DELETE
+              </button>
+
+              
+            </div>
+          </div> 
+        </div> 
+          
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="/assets/js/index.js"></script>
   </body>
