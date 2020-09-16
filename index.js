@@ -1,6 +1,7 @@
 var $noteTitle = $(".note-title");
 var $noteText = $(".note-textarea");
 var $saveNoteBtn = $(".save-note");
+var $deleteNoteBtn = $(".delete-note");
 var $newNoteBtn = $(".new-note");
 var $noteList = $(".list-container .list-group");
 
@@ -73,7 +74,7 @@ var handleNoteDelete = function (event) {
     activeNote = {};
   }
 
-  deleteNote(note.id).then(function () {
+  deleteNote(upDate.id).then(function () {
     getAndRenderNotes();
     renderActiveNote();
   });
